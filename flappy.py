@@ -97,8 +97,9 @@ def main():
 
     while True:
         # select random background sprites
-        randBg = random.randint(0, len(BACKGROUNDS_LIST) - 1)
-        IMAGES['background'] = pygame.image.load(BACKGROUNDS_LIST[randBg]).convert()
+        # randBg = random.randint(0, len(BACKGROUNDS_LIST) - 1)
+        # got rid of random background
+        IMAGES['background'] = pygame.image.load(BACKGROUNDS_LIST[0]).convert()
 
         # select random player sprites
         randPlayer = random.randint(0, len(PLAYERS_LIST) - 1)
