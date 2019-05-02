@@ -6,8 +6,9 @@ import numpy as np
 
 import time
 from datetime import datetime
+from test import update
 
-data = []
+
 
 def initialize():
     """
@@ -83,6 +84,10 @@ def shape_to_np(shape, dtype="int"):
     return coords
 
 
+def writeFile(data):
+    f = open("data.txt", "a+")
+    f.write("%s\n" % str(data))
+
 def detect_action_units(shape_coords, rect):
     """
     Detects the presence of action units
@@ -114,14 +119,21 @@ def detect_action_units(shape_coords, rect):
 
     # distance between the corners = right_lip_corner_x - left_lip_corner_x
 
+    changeExpression = update(0)
+    writeFile(changeExpression.getExpression())
 
     # 0.32 comes from calculating the neutral difference between the lip corners
     # which can be calculated using: (right_lip_corner_x - left_lip_corner_x)/w
     smile_param = 0.09 # can be adjusted for different faces
     if (((right_lip_corner_x - left_lip_corner_x)/w)>0.32+smile_param):
         au_array[12] = 1
-        data.append(1)
-        # print (data)
+        #data.append(1)
+        value = 1
+        changeExpression.setExpression(1)
+        writeFile(changeExpression.getExpression())
+    
+    # variable = changeExpression.getExpression()
+    # print ("expr_facial", variable)
 
     # Upper Lid Raiser
     left_eye_lid_x, left_eye_lid_y = shape_coords[38]
@@ -263,9 +275,8 @@ def stream_start():
     cv2.destroyAllWindows()
 
 
-# def getVal():
-#     return b
+def getVal():
+    return value
 
 if __name__ == "__main__":
     stream_start()
-    
