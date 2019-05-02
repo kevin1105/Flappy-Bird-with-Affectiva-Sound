@@ -4,7 +4,8 @@ import sys
 
 import pygame
 from pygame.locals import *
-from facial import *
+
+import facial
 import pyaudio
 import struct
 import numpy as np
@@ -13,8 +14,11 @@ import matplotlib.pyplot as plt
 from tkinter import TclError
 import time
 import threading
+from test import update
 
 
+changeExpression = update(0)
+facial_data = []
 #########################################
 # Sound Waves #
 CHUNK = 1024 * 4
@@ -232,6 +236,21 @@ def threadSound():
     global doJump
     doJump = data_int[0]
 
+def sendUserData():
+    f3 = open("data2.txt", "w+")
+    normal_data = 0
+    happy_data = 0
+    for x in facial_data:
+        if x == '0' or x == 0:
+            normal_data += 1
+        elif x == '1' or x == 1:
+            happy_data += 1
+
+    changeExpression.setExpression(happy_data)
+    f3.write("Normal Data: %s\n" % str(normal_data))
+    f3.write("Happy Data: %s\n" % str(happy_data))
+    f3.close()
+
 # Edited 
 def mainGame(movementInfo):
     score = playerIndex = loopIter = 0
@@ -273,9 +292,15 @@ def mainGame(movementInfo):
     count = 0
     # while game is running
     while True:
-
         global value
-        # print (value)
+
+        # obtain data from facial.py for happy/sad expression
+        f = open("data.txt", "r")
+        if f.mode == "r":
+            f1 = f.readlines()
+            f.close()
+            b = f1[len(f1)-1]
+            facial_data.append(b)
 
         # threading so that sound detector doesn't affect overall game play
         t = threading.Thread(name='sound',  target=threadSound )
@@ -295,9 +320,7 @@ def mainGame(movementInfo):
                     # SOUNDS['wing'].play()
 
         # jump up based on sound loudness
-    
-        print (doJump)
-        if ( (doJump >= 128+15) or (doJump <= 128-15) ):
+        if ( ((doJump >= 128+15) or (doJump <= 128-15)) and doJump!=0 ):
             count += 1
             if ( count % 5 == 0 ):
                 playerVelY = playerFlapAcc
@@ -354,6 +377,10 @@ def mainGame(movementInfo):
         for uPipe, lPipe in zip(upperPipes, lowerPipes):
             uPipe['x'] += pipeVelX 
             lPipe['x'] += pipeVelX 
+            # slow pipes if happy face for some time
+            if (changeExpression.getExpression() == 50):
+                uPipe['x'] += pipeVelX+1
+                lPipe['x'] += pipeVelX+1
             if (score >= 15):
                 uPipe['x'] += pipeVelX-1
                 lPipe['x'] += pipeVelX-1
@@ -413,7 +440,6 @@ def showGameOverScreen(crashInfo):
 
     upperPipes, lowerPipes = crashInfo['upperPipes'], crashInfo['lowerPipes']
 
-
     while True:
         for event in pygame.event.get():
             if event.type == QUIT or (event.type == KEYDOWN and event.key == K_ESCAPE):
@@ -454,7 +480,7 @@ def showGameOverScreen(crashInfo):
         FPSCLOCK.tick(FPS)
         pygame.display.update()
 
-
+# Not Edited
 def playerShm(playerShm):
     """oscillates the value of playerShm['val'] between 8 and -8"""
     if abs(playerShm['val']) == 8:
@@ -495,7 +521,7 @@ def showScore(score):
         SCREEN.blit(IMAGES['numbers'][digit], (Xoffset, SCREENHEIGHT * 0.1))
         Xoffset += IMAGES['numbers'][digit].get_width()
 
-# Not Edited
+# Edited
 def checkCrash(player, upperPipes, lowerPipes):
     """returns True if player collders with base or pipes."""
     pi = player['index']
@@ -529,6 +555,7 @@ def checkCrash(player, upperPipes, lowerPipes):
             if uCollide or lCollide:
                 return [True, False]
 
+    sendUserData()
     return [False, False]
 
 # Not Edited
@@ -559,7 +586,4 @@ def getHitmask(image):
     return mask
 
 if __name__ == '__main__':
-    # val = __import__("facial");
-    # print (dir(val))
-    # print (val.getVal)
     main()
