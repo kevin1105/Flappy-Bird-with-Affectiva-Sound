@@ -1,5 +1,7 @@
 # Flappy Bird with Affectiva & Sound Input
 Using sound input and facial recognition, the player will be able to play the game
+To play the game, you would need to open two conda terminals 
+
 
 Implemented Pygame, Conda, Dlib, PyAudio, Threading, OpenCV, Matplotlib
 
@@ -12,6 +14,7 @@ For Affectiva (Facial Recognition)
 5) pip install numpy scipy matplotlib scikit-learn jupyter
 6) pip install opencv-python
 7) pip install opencv-contrib-python
+8) Download the shape_predictor_68_face_landmarks.dat file from this github
 
 For Game & Sound Input
 1) Download game from https://github.com/sourabhv/FlapPyBird
@@ -24,6 +27,7 @@ For Affectiva (Facial Recognition)
 3) source activate <yourenvname>
 4) conda install -c menpo dlib
 5) pip install opencv-python
+6) Download the shape_predictor_68_face_landmarks.dat file from this github
 
 For Game & Sound Input
 1) Download game from https://github.com/sourabhv/FlapPyBird
