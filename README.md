@@ -19,7 +19,8 @@ For Affectiva (Facial Recognition)
 
 For Game & Sound Input
 1) Download flappy.py from this github
-2) conda install -c anaconda pyaudio 
+2) Download sprites file from this github
+3) conda install -c anaconda pyaudio 
 
 # To compile and run the game in MacOS:
 For Affectiva (Facial Recognition)
@@ -33,7 +34,12 @@ For Affectiva (Facial Recognition)
   
 For Game & Sound Input
 1) Download flappy.py from this github
-2) conda install -c anaconda pyaudio 
+2) Download sprites file from this github
+3) conda install -c anaconda pyaudio 
+
+# Data 
+1) Download or Create file data.txt, data2.txt from the github
+2) Download test.py from the github
 
 Source:
 https://github.com/sourabhv/FlapPyBird
