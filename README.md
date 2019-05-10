@@ -5,7 +5,7 @@ To play the game, you would need to open two conda terminals
 
 Implemented Pygame, Conda, Dlib, PyAudio, Threading, OpenCV, Matplotlib
 
-#To compile and run the game in Windows:
+# To compile and run the game in Windows:
 For Affectiva (Facial Recognition)
 1) Download Anaconda Python3 from: https://www.anaconda.com/distribution/#download-section
 2) conda create --name <yourenvname> python=3 
@@ -20,7 +20,7 @@ For Game & Sound Input
 1) Download game from https://github.com/sourabhv/FlapPyBird
 2) conda install -c anaconda pyaudio 
 
-#To compile and run the game in MacOS:
+# To compile and run the game in MacOS:
 For Affectiva (Facial Recognition)
 1) Download Anaconda Python3 from: https://www.anaconda.com/distribution/#download-section
 2) conda create -n <yourenvname> python=3 anaconda
