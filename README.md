@@ -15,9 +15,10 @@ For Affectiva (Facial Recognition)
 6) pip install opencv-python
 7) pip install opencv-contrib-python
 8) Download the shape_predictor_68_face_landmarks.dat file from this github
+9) Download facial.py file from this github
 
 For Game & Sound Input
-1) Download game from https://github.com/sourabhv/FlapPyBird
+1) Download flappy.py from this github
 2) conda install -c anaconda pyaudio 
 
 # To compile and run the game in MacOS:
@@ -28,7 +29,11 @@ For Affectiva (Facial Recognition)
 4) conda install -c menpo dlib
 5) pip install opencv-python
 6) Download the shape_predictor_68_face_landmarks.dat file from this github
-
+7) Download facial.py file from this github
+  
 For Game & Sound Input
-1) Download game from https://github.com/sourabhv/FlapPyBird
+1) Download flappy.py from this github
 2) conda install -c anaconda pyaudio 
+
+Source:
+https://github.com/sourabhv/FlapPyBird
