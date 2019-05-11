@@ -207,10 +207,10 @@ def identify_expression(au_array, frame, rect):
     #     cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0,255,0), 2)
     #     return frame
     # Expression for Anger is AU 4(Brow Lowerer),5(Upper Lid Raiser), and optionally 23
-    # elif au_array[4]==1 and au_array[5]==1 and au_array[23]==1:
-    #     cv2.putText(frame, "Anger", (x-10, y-10),
-    #     cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0,255,0), 2)
-    #     return frame
+    elif au_array[26]==1 and au_array[4]==1 and au_array[5]==1 and au_array[23]==1:
+        cv2.putText(frame, "Frustration", (x-10, y-10),
+        cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0,255,0), 2)
+        return frame
 
     return frame
 
