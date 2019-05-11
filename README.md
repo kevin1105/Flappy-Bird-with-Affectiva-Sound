@@ -16,6 +16,7 @@ For Affectiva (Facial Recognition)
 7) pip install opencv-contrib-python
 8) Download the shape_predictor_68_face_landmarks.dat file from this github
 9) Download facial.py file from this github
+10) Download SHAPE_PREDICTOR_68_FACE_LANDMARKS.DAT from https://github.com/AKSHAYUBHAT/TensorFace/blob/master/openface/models/dlib/shape_predictor_68_face_landmarks.dat
 
 For Game & Sound Input
 1) Download flappy.py from this github
@@ -31,6 +32,7 @@ For Affectiva (Facial Recognition)
 5) pip install opencv-python
 6) Download the shape_predictor_68_face_landmarks.dat file from this github
 7) Download facial.py file from this github
+8) Download SHAPE_PREDICTOR_68_FACE_LANDMARKS.DAT from https://github.com/AKSHAYUBHAT/TensorFace/blob/master/openface/models/dlib/shape_predictor_68_face_landmarks.dat
   
 For Game & Sound Input
 1) Download flappy.py from this github
