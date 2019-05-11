@@ -1,1 +1,17 @@
-0
+Normal Data: 178
+Happy Data: 45
+
+Normal Data: 594
+Happy Data: 46
+
+Normal Data: 173
+Happy Data: 0
+
+Normal Data: 211
+Happy Data: 29
+
+Normal Data: 150
+Happy Data: 112
+
+Normal Data: 345
+Happy Data: 56
