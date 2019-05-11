@@ -236,6 +236,7 @@ def threadSound():
     global doJump
     doJump = data_int[0]
 
+# send data to data2 file
 def sendUserData():
     f3 = open("data2.txt", "w+")
     normal_data = 0
@@ -246,6 +247,7 @@ def sendUserData():
         elif x == '1' or x == 1:
             happy_data += 1
 
+    # print(normal_data)
     changeExpression.setExpression(happy_data)
     f3.write("Normal Data: %s\n" % str(normal_data))
     f3.write("Happy Data: %s\n" % str(happy_data))
@@ -301,6 +303,8 @@ def mainGame(movementInfo):
             f.close()
             b = f1[len(f1)-1]
             facial_data.append(b)
+            facial_data[-1] = facial_data[-1].strip()
+            print (facial_data)
 
         # threading so that sound detector doesn't affect overall game play
         t = threading.Thread(name='sound',  target=threadSound )
