@@ -304,7 +304,6 @@ def mainGame(movementInfo):
             b = f1[len(f1)-1]
             facial_data.append(b)
             facial_data[-1] = facial_data[-1].strip()
-            print (facial_data)
 
         # threading so that sound detector doesn't affect overall game play
         t = threading.Thread(name='sound',  target=threadSound )
