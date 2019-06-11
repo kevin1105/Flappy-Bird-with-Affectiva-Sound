@@ -43,5 +43,5 @@ For Game & Sound Input
 1) Download or Create file data.txt, data2.txt from the github
 2) Download test.py from the github
 
-Source:
+Game Source:
 https://github.com/sourabhv/FlapPyBird
