@@ -1,7 +1,7 @@
 # Flappy Bird with Affectiva & Sound Input
 Using sound input and facial recognition, the player will be able to play the game either through using regular keyboard or through sound input.
-To play the game, you would need to open two conda terminals; one for facial recognition and one for the game
 
+To play the game, you would need to open two conda terminals; one for facial recognition and one for the game
 
 Implemented Pygame, Conda, Dlib, PyAudio, Threading, OpenCV, Matplotlib
 
